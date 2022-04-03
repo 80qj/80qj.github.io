@@ -1,4 +1,14 @@
 ﻿<!DOCTYPE html>
+<span style="font-size:18px;"><?php
+require_once 'function.php';
+if (isMobile()){
+    //跳转到手机端
+    header("Location: index1.html"); 
+}else{
+    //跳转到PC端
+    header("Location: index.html"); 
+}
+?></span>
 <html lang="zh-cn">
 <head>
     <meta charset="UTF-8">
