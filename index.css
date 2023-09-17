@@ -1,0 +1,215 @@
+uni-app{
+	height: auto;
+}
+
+
+[v-cloak] {
+      display: none;
+    }
+	
+	
+html{
+	height: 100%;
+}
+
+body {
+	background: #eee;
+	max-width: 600px;
+	margin: 0 auto;
+	height: 100%;
+}
+
+
+.nav-header {
+	height: 45px;
+	line-height: 45px;
+	position: relative;
+	top: 0;
+	text-overflow: ellipsis;
+	word-break: break-all;
+	white-space: nowrap;
+	overflow: hidden;
+	text-align: center;
+}
+
+.bg1 {
+	background: linear-gradient(20deg, rgb(255, 69, 60), rgb(255, 91, 51));
+}
+
+.bg2 {
+	background: linear-gradient(20deg, #ec008c, #6739b6);
+}
+
+.bg3 {
+	background: linear-gradient(20deg, #f43f3b, #ec008c);
+}
+
+.bg4 {
+	background: linear-gradient(20deg, #ff9700, #ed1c24);
+}
+
+.bgyellow {
+	background: #FFA500;
+}
+
+.nav-header .title {
+	font-size: 16px;
+	vertical-align: top;
+	display: inline-block;
+	color: #FFF;
+	text-overflow: ellipsis;
+	word-break: break-all;
+	white-space: nowrap;
+	overflow: hidden;
+	max-width: 81%;
+}
+
+.nav-header .cell span a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.scenograph {
+	padding: 16px 18px 0 16px;
+	text-align: center;
+	color: #999999;
+	font-size: 0.2rem;
+}
+
+.scenograph #type-bimg {
+	 box-shadow: 0px 0.25rem 0.5rem rgba(70, 70, 70, .3);
+	width: 100%;
+	margin-bottom: 0.5rem;
+	border: 0.125rem solid #e4e7ea;
+	border-radius: 0.625rem; 
+}
+
+.drugsword {
+	margin: 14px;
+	margin-top: 16px;
+	text-align: center;
+}
+
+.medicine-bag {
+	background: white;
+	border: 1px dashed #fb6a65;
+	border-radius: 5px;
+}
+
+.icopy {
+	border-radius: 5px;
+	color: white;
+	font-size: 14px;
+	margin: 16px auto;
+	padding: 10px;
+	margin-bottom: 2px;
+	cursor: pointer;
+}
+
+.copy-tip {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background: linear-gradient(to right, #f9c492, #fb6a65);
+	color: white;
+	font-size: 12px;
+	height: 24px;
+}
+
+.jtone,
+.jttwo,
+.jtthree {
+	position: relative;
+	width: 0;
+	height: 0;
+	border-top: 12px solid transparent;
+	border-left: 10px solid white;
+	border-bottom: 12px solid transparent;
+}
+
+.jtone::before,
+.jttwo::before,
+.jtthree::before {
+	content: "";
+	position: absolute;
+	top: -12px;
+	left: -13px;
+	width: 0;
+	height: 0;
+	border-top: 12px solid transparent;
+	border-bottom: 12px solid transparent;
+}
+
+.jtone::before {
+	border-left: 10px solid #fab189;
+}
+
+.jttwo::before {
+	border-left: 10px solid #fa9b7e;
+}
+
+.jtthree::before {
+	border-left: 10px solid #fa8673;
+}
+
+
+.onlytwo .jtone::before {
+	border-left: 10px solid #faa784 !important;
+}
+
+.onlytwo .jttwo::before {
+	border-left: 10px solid #fa8573 !important;
+}
+
+
+.icopy_1 {
+	background: #31b9e9;
+	color: white;
+	font-size: 14px;
+	margin: 20px 0 0 0;
+	cursor: pointer;
+	padding: 10px;
+	border-radius: 5px;
+}
+.icopy_1.changebg{
+	background: #666bff;
+}
+
+.icopy.changebg{
+	background: #FFA500;
+
+}
+.icopy_2 {
+	background: #31b9e9;
+	color: white;
+	font-size: 14px;
+	margin: 18px 0 0 0;
+	cursor: pointer;
+	padding: 10px;
+	border-radius: 4px;
+}
+.icopy_1.changebg{
+	background: #666bff;
+}
+
+.icopy.changebg{
+	background: #FFA500;
+}
+#幻彩 {
+  font-size: 30px;
+  margin: 10;
+  background: -webkit-linear-gradient(left, #ffffff, #ff0000 6.25%, #ff7d00 12.5%, #ffff00 18.75%, #00ff00 25%, #00ffff 31.25%, #0000ff 37.5%, #ff00ff 43.75%, #ffff00 50%, #ff0000 56.25%, #ff7d00 62.5%, #ffff00 68.75%, #00ff00 75%, #00ffff 81.25%, #0000ff 87.5%, #ff00ff 93.75%, #ffff00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  animation: masked-animation 2s infinite linear;
+}
+
+@keyframes masked-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -100%, 0;
+  }
+}
