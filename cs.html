@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>小姐姐视频</title>
+</head>
+<body>
+    <h1>小姐姐视频</h1>
+           <button onclick="refreshVideo()">刷新</button>
+    
+    <video id="video" controls autoplay muted style="width: 100%; max-width: 600px; margin: 20px auto;"></video>
+    
+    <button onclick="refreshVideo()">刷新</button>
+    
+    <script>
+        var videoElement = document.getElementById('video');
+        
+        function loadVideo() {
+            // 获取随机的小姐姐视频
+            var videoSrc = 'http://api.yujn.cn/api/zzxjj.php?type=video&r=' + Math.random();
+            
+            // 设置视频元素的源
+            videoElement.src = videoSrc;
+        }
+        
+        function refreshVideo() {
+            // 刷新视频
+            loadVideo();
+            // 播放视频
+            videoElement.play();
+        }
+        
+        // 页面加载完成后加载视频
+        window.onload = loadVideo;
+    </script>
+</body>
+</html>
