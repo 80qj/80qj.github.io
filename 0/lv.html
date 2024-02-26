@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+ 
+    .red-text {
+      color: red;
+    }
+  
+    button {
+      font-size: 16px;
+      padding: 5px 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+    }
+  </style>
+
+  <script>
+    function calculate() {
+      var height = parseInt(document.getElementById("height").value); // 窗户高
+      var width = parseInt(document.getElementById("width").value); // 窗户宽
+      var f = parseInt(document.getElementById("f").value); // 数量f
+      var e = parseInt(document.getElementById("e").value); // 分几格
+      var a = 4; // 上滑减去的值a
+      var j = 4; // 上下方加的值j
+      var b = 5.5; // 上固减去的值b
+      var c = parseFloat(document.getElementById("c").value); // 门扇高c
+      var d = 2.8; // 上固厚d
+      var g = 5.5; // 门扇光勾企2减去的值g
+      var k = 8; // 玻璃高减去的值k
+
+      // 计算边锋
+      var bianfeng = height;
+      // 计算边锋数量
+      var bianfeng1 = 2 * f;
+      // 计算上滑
+      var shanghua = (width - a);
+      // 计算数量
+      var xiahua = f;
+
+      // 计算上下方
+      var shangxiafang = (shanghua + j) / 2;
+      var shangxiafang1 = 2 * f;
+      var menshangGuanggou = 2 * f;
+
+      var ms = shangxiafang - 0.5;
+     
+      // 计算中柱
+      var hasShanggu = document.getElementById("hasShanggu").checked;
+      var sg1 = 0;
+
+      if (hasShanggu) {
+        sg1 = f; // 如果勾选,则
+      } else {
+        sg1 = "无"; // 如果不勾选,则
+      }
+
+      // 计算中柱
+      var hasShanggu = document.getElementById("hasShanggu").checked;
+      var zz1 = 0;
+
+      if (hasShanggu) {
+        zz1 = (e - 1) * f; // 如果勾选,则
+      } else {
+        zz1 = "无"; // 如果不勾选,则
+      }
+
+     var hasShanggu = document.getElementById("hasShanggu").checked;
+var menshangGuanggou2 = 0;
+var ms1 = 0;
+
+if (hasShanggu) {
+    menshangGuanggou2 = (c - b);
+    ms1 = menshangGuanggou2 - 8; // 在这里计算ms1的值
+} else {
+    menshangGuanggou2 = (height - b);
+    ms1 = menshangGuanggou2 - 8; // 在这里计算ms1的值
+}
+
+var ms2 = 2 * f;
+
+      // 计算上固
+      var hasShanggu = document.getElementById("hasShanggu").checked;
+      var shanggu = 0;
+
+      if (hasShanggu) {
+        shanggu = shanghua;
+      } else {
+        shanggu = "无";
+      }
+
+      // 计算中柱
+      var hasShanggu = document.getElementById("hasShanggu").checked;
+      var zhongzhu = 0;
+
+      if (hasShanggu) {
+        zhongzhu = (height - c - d); // 如果勾选,则 menshangGuanggou2 = a + b
+      } else {
+        zhongzhu = "无"; // 如果不勾选,则
+      }
+
+      // 计算玻璃
+      var hasShanggu = document.getElementById("hasShanggu").checked;
+      var boligao = 0;
+
+      if (hasShanggu) {
+        boligao = (zhongzhu + 0.8); // 如果勾选,则 menshangGuanggou2 = a + b
+      } else {
+        boligao = "无"; // 如果不勾选,则
+      }
+
+      var hasShanggu = document.getElementById("hasShanggu").checked;
+      var boligao1 = 0;
+
+      if (hasShanggu) {
+        boligao1 = (shanggu - 0.3 - 2.4 * zz1 - 2) / e; // 如果勾选,则 menshangGuanggou2 = a + b
+      } else {
+        boligao1 = "无"; // 如果不勾选,则
+      }
+
+      // 计算摇头玻璃数量
+      var hasShanggu = document.getElementById("hasShanggu").checked;
+      var yt1 = 0;
+
+      if (hasShanggu) {
+        yt1 = (e * f); // 如果勾选,则
+      } else {
+        yt1 = "无"; // 如果不勾选,则
+      }
+
+      var hasShanggu = document.getElementById("hasShanggu").checked;
+      var gb = 0;
+
+      if (hasShanggu) {
+        gb = (2 * f); // 如果勾选,则
+      } else {
+        gb = "无"; // 如果不勾选,则
+      }
+
+      // 在页面上展示计算结果
+      document.getElementById("bianfeng").innerHTML = bianfeng;
+      document.getElementById("bianfeng1").innerHTML = bianfeng1;
+      document.getElementById("shanghua").innerHTML = shanghua;
+      document.getElementById("xiahua").innerHTML = xiahua;
+      document.getElementById("shangxiafang").innerHTML = shangxiafang;
+      document.getElementById("shangxiafang1").innerHTML = shangxiafang1;
+      document.getElementById("shanggu").innerHTML = shanggu;
+      document.getElementById("sg1").innerHTML = sg1;
+      document.getElementById("zhongzhu").innerHTML = zhongzhu;
+      document.getElementById("gb").innerHTML = gb;
+      document.getElementById("zz1").innerHTML = zz1;
+      document.getElementById("menshangGuanggou2").innerHTML = menshangGuanggou2;
+      document.getElementById("menshangGuanggou").innerHTML = menshangGuanggou;
+      document.getElementById("boligao").innerHTML = boligao;
+      document.getElementById("boligao1").innerHTML = boligao1;
+      document.getElementById("yt1").innerHTML = yt1;
+      document.getElementById("ms1").innerHTML = ms1;
+      document.getElementById("ms").innerHTML = ms;
+      document.getElementById("ms2").innerHTML = ms2;
+    }
+  </script>
+</head>
+
+<body>
+  <label for="height">窗户高：</label>
+  <input type="number" id="height" value=""><br><br>
+  <label for="width">窗户宽：</label>
+  <input type="number" id="width" value=""><br><br>
+  <label for="f">数量：</label>
+  <input type="number" id="f" value="1"><br><br>
+  <label for="c">门扇高：</label>
+  <input type="number" id="c" value="0"><br><br>
+  <label for="e">摇头分几隔：</label>
+  <input type="number" id="e" value="2"><br><br>
+  <label for="hasShanggu">选择有固定头：</label>
+  <input type="checkbox" id="hasShanggu"><br><br>
+
+  <button onclick="calculate()">计算</button>
+  <p>
+    <p>
+<p>上固： <span class="red-text" id="shanggu"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    上固数量： <span class="red-text" id="sg1"></span>
+  </p>
+  </p>
+  <p>中柱和盖板： <span class="red-text" id="zhongzhu"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>中柱数量： <span class="red-text" id="zz1"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>盖板数量： <span class="red-text" id="gb"></span></p>
+
+边锋: <span class="red-text" id="bianfeng"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      边锋数量: <span class="red-text" id="bianfeng1"></span>
+    </p>
+  </p>
+  <p>上下滑： <span class="red-text" id="shanghua"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    上下滑数量各： <span class="red-text" id="xiahua"></span>
+  </p>
+  <p>上下方： <span class="red-text" id="shangxiafang"> </span> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    上下方数量各： <span class="red-text" id="shangxiafang1"></span>
+  </p>
+  </p>
+  
+  <p>门扇光勾企2： <span class="red-text" id="menshangGuanggou2"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>光勾企数量各： <span class="red-text" id="menshangGuanggou"></span>
+  </p>
+  </p>
+  <p>摇头玻璃高： <span class="red-text" id="boligao"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    摇头玻璃宽： <span class="red-text" id="boligao1"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    摇头玻璃数量： <span class="red-text" id="yt1"></span>
+  </p>
+  </p>
+
+  <p>门扇玻璃高： <span class="red-text" id="ms1"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    门扇玻璃宽： <span class="red-text" id="ms"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    门扇玻璃数量： <span class="red-text" id="ms2"></span>
+  </p>
+  </p>
+</body>
+</html>
