@@ -39,42 +39,46 @@
     <script>
         function searchMovies() {
             var movieName = document.getElementById("movieInput").value;
-            var apiUrl = "http://123.57.55.25:8451/api/movies?page=1&limit=10&name=" + encodeURIComponent(movieName);
+            var apiUrl = `http://localhost:3000/api/movies?page=1&limit=10&name=${encodeURIComponent(movieName)}`;
 
             fetch(apiUrl)
                 .then(response => response.json())
                 .then(data => {
-                    var tableBody = document.getElementById("movieTable").getElementsByTagName("tbody")[0];
-                    tableBody.innerHTML = ""; // 清空表格内容
+                    if (data.code === 200) {
+                        var tableBody = document.getElementById("movieTable").getElementsByTagName("tbody")[0];
+                        tableBody.innerHTML = ""; // 清空表格内容
 
-                    data.forEach(function(movie) {
-                        var row = document.createElement("tr");
+                        data.data.forEach(function(movie) {
+                            var row = document.createElement("tr");
 
-                        var panTypeCell = document.createElement("td");
-                        panTypeCell.textContent = movie.pan_type;
-                        row.appendChild(panTypeCell);
+                            var panTypeCell = document.createElement("td");
+                            panTypeCell.textContent = movie.pan_type;
+                            row.appendChild(panTypeCell);
 
-                        var nameCell = document.createElement("td");
-                        nameCell.textContent = movie.name;
-                        row.appendChild(nameCell);
+                            var nameCell = document.createElement("td");
+                            nameCell.textContent = movie.name;
+                            row.appendChild(nameCell);
 
-                        var linkCell = document.createElement("td");
-                        var linkElement = document.createElement("a");
-                        linkElement.href = movie.link;
-                        linkElement.textContent = movie.link;
-                        linkCell.appendChild(linkElement);
-                        row.appendChild(linkCell);
+                            var linkCell = document.createElement("td");
+                            var linkElement = document.createElement("a");
+                            linkElement.href = movie.link;
+                            linkElement.textContent = movie.link;
+                            linkCell.appendChild(linkElement);
+                            row.appendChild(linkCell);
 
-                        var keywordCell = document.createElement("td");
-                        keywordCell.textContent = movie.keyword;
-                        row.appendChild(keywordCell);
+                            var keywordCell = document.createElement("td");
+                            keywordCell.textContent = movie.keyword;
+                            row.appendChild(keywordCell);
 
-                        var createTimeCell = document.createElement("td");
-                        createTimeCell.textContent = movie.create_time;
-                        row.appendChild(createTimeCell);
+                            var createTimeCell = document.createElement("td");
+                            createTimeCell.textContent = movie.create_time;
+                            row.appendChild(createTimeCell);
 
-                        tableBody.appendChild(row);
-                    });
+                            tableBody.appendChild(row);
+                        });
+                    } else {
+                        console.error("API返回错误:", data);
+                    }
                 })
                 .catch(error => console.error(error));
         }
