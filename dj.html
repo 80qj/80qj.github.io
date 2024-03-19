@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>电影列表</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>电影列表</h1>
+    <input type="text" id="movieInput" placeholder="输入电影名称">
+    <button onclick="searchMovies()">搜索</button>
+    <table id="movieTable">
+        <thead>
+            <tr>
+                <th>网盘类型</th>
+                <th>名称</th>
+                <th>视频连接</th>
+                <th>关键字</th>
+                <th>创建时间</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        function searchMovies() {
+            var movieName = document.getElementById("movieInput").value;
+            var apiUrl = "http://123.57.55.25:8451/api/movies?page=1&limit=10&name=" + encodeURIComponent(movieName);
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    var tableBody = document.getElementById("movieTable").getElementsByTagName("tbody")[0];
+                    tableBody.innerHTML = ""; // 清空表格内容
+
+                    data.forEach(function(movie) {
+                        var row = document.createElement("tr");
+
+                        var panTypeCell = document.createElement("td");
+                        panTypeCell.textContent = movie.pan_type;
+                        row.appendChild(panTypeCell);
+
+                        var nameCell = document.createElement("td");
+                        nameCell.textContent = movie.name;
+                        row.appendChild(nameCell);
+
+                        var linkCell = document.createElement("td");
+                        var linkElement = document.createElement("a");
+                        linkElement.href = movie.link;
+                        linkElement.textContent = movie.link;
+                        linkCell.appendChild(linkElement);
+                        row.appendChild(linkCell);
+
+                        var keywordCell = document.createElement("td");
+                        keywordCell.textContent = movie.keyword;
+                        row.appendChild(keywordCell);
+
+                        var createTimeCell = document.createElement("td");
+                        createTimeCell.textContent = movie.create_time;
+                        row.appendChild(createTimeCell);
+
+                        tableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error(error));
+        }
+    </script>
+</body>
+</html>
