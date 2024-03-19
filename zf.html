@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>扫码支付</title>
+    <script>
+      function detectPaymentMethod() {
+        // 检测用户是从微信还是支付宝进入
+        var userAgent = navigator.userAgent.toLowerCase();
+        if (userAgent.indexOf('micromessenger') !== -1) {
+          // 微信浏览器
+          window.location.href = 'wxp://f2f6mjHApKWOdBTOYd0aNHWednqE0C65iy1z7Bm_BP5UWmo';
+        } else if (userAgent.indexOf('alipayclient') !== -1) {
+          // 支付宝浏览器
+          window.location.href = 'https://qr.alipay.com/fkx16613vbbtqfxcfho5o4a?t=1710842206285';
+        } else {
+          // 其他浏览器
+          alert('请使用微信或支付宝客户端扫码支付');
+        }
+      }
+    </script>
+  </head>
+  <body onload="detectPaymentMethod()">
+    <h1>请扫码支付</h1>
+    <p>扫描二维码完成支付</p>
+  </body>
+</html>
